@@ -1551,7 +1551,7 @@ JitsiConference.prototype._acceptJvbIncomingCall = function(
             value: now
         }));
     try {
-        jingleSession.initialize(false /* initiator */, this.room, this.rtc);
+        jingleSession.initialize(this.room, this.rtc, this.options.config);
     } catch (error) {
         GlobalOnErrorHandler.callErrorHandler(error);
     }
@@ -2296,8 +2296,7 @@ JitsiConference.prototype._acceptP2PIncomingCall = function(
     // Accept the offer
     this.p2pJingleSession = jingleSession;
 
-    this.p2pJingleSession.initialize(
-        false /* initiator */, this.room, this.rtc);
+    this.p2pJingleSession.initialize(this.room, this.rtc, this.options.config);
 
     logger.info('Starting CallStats for P2P connection...');
 
@@ -2598,7 +2597,7 @@ JitsiConference.prototype._startP2PSession = function(remoteJid) {
     logger.info(
         'Created new P2P JingleSession', this.room.myroomjid, remoteJid);
 
-    this.p2pJingleSession.initialize(true /* initiator */, this.room, this.rtc);
+    this.p2pJingleSession.initialize(this.room, this.rtc, this.options.config);
 
     logger.info('Starting CallStats for P2P connection...');
 
