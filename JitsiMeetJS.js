@@ -1,7 +1,7 @@
 /* global __filename */
 
 import { createGetUserMediaEvent } from './service/statistics/AnalyticsEvents';
-import AuthUtil from './modules/util/AuthUtil';
+import * as AuthUtil from './modules/util/AuthUtil';
 import * as ConnectionQualityEvents
     from './service/connectivity/ConnectionQualityEvents';
 import * as E2ePingEvents from './service/e2eping/E2ePingEvents';

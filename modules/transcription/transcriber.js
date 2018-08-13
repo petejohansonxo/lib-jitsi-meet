@@ -17,7 +17,7 @@ const MAXIMUM_SENTENCE_LENGTH = 80;
  * will be merged to create a transcript
  * @param {AudioRecorder} audioRecorder An audioRecorder recording a conference
  */
-function Transcriber() {
+export default function Transcriber() {
     // the object which can record all audio in the conference
     this.audioRecorder = new AudioRecorder();
 
@@ -356,5 +356,3 @@ Transcriber.prototype.reset = function() {
     this.results = [];
     this.lineLength = 0;
 };
-
-module.exports = Transcriber;

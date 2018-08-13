@@ -5,7 +5,7 @@
  * in case the user has left the meeting,
  * which is also tracked.
  */
-class SpeakerStats {
+export default class SpeakerStats {
     /**
      * Initializes a new SpeakerStats instance.
      *
@@ -128,5 +128,3 @@ class SpeakerStats {
         this.setIsDominantSpeaker(false);
     }
 }
-
-module.exports = SpeakerStats;
